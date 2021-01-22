@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBlog } from '../actions/blogs';
+import Input from './dumbComponents/input';
 
 const NewBlogForm = (): any => {
 
@@ -35,49 +36,16 @@ const clear = () => {
 
 return (
     <form className="new-blog">
-        <label htmlFor="blog-title"> Title:
-            <input 
-                className="blog-title" 
-                type="text"
-                onChange={(e) => setBlogData({...blogData, title: e.target.value})}
-            ></input>
-        </label>
-        <label htmlFor="content"> Content:
-            <textarea 
-                className="content"
-                onChange={(e) => setBlogData({...blogData, content: e.target.value})}
-            ></textarea>
-        </label>
-        <label htmlFor="images"> Image:
-            <input 
-                className="images"
-                onChange={(e) => setBlogData({...blogData, images: [...blogData.images, e.target.value]})}
-            ></input>
-        </label>
-        <label htmlFor="tags"> Tags:
-            <input 
-                className="tags"
-                onChange={(e) => setBlogData({...blogData, tags: [...blogData.tags, e.target.value]})}
-            ></input>
-        </label>
-        <label htmlFor="type"> Type:
-            <input 
-                className="type" 
-                type="text"
-                onChange={(e) => setBlogData({...blogData, createdAt: {type: e.target.value,}})}
-            ></input>
-        </label>
-            {/* <button 
-                className="like-count" 
-                onChange={(e) => setBlogData({
-                    ...blogData, likeCount: {type: 1, default: blogData.likeCount.type += 1,}
-                })
-            }
-            >Like</button> */}
-            <button 
-                className="submit-button"
-                onClick={handleSubmit}
-            >Publish</button>
+        <Input inputType={"title"} /> 
+        <Input inputType={"paragraph"} /> 
+        <Input inputType={"image"} /> 
+        <Input inputType={"tags"} /> 
+        <Input inputType={"type"} /> 
+        <button 
+            className="submit-button"
+            onClick={handleSubmit}
+        >Publish
+        </button>
     </form>
 )
 }
