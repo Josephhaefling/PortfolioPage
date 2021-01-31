@@ -1,13 +1,18 @@
 import React, { FC, useEffect } from 'react';
+import { Switch, Route, withRouter, Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux';
 import { getFavorites } from './actions/favorites'
-import { getBlogs } from './actions/blogs'
-import NewBlogForm from './components/newBlogForm'
-import logo from './logo.svg';
-import './App.css';
+import { getBlogs } from './actions/blogs';
+import { Container, Typography, Grow, Grid } from "@material-ui/core";
+import useStyles from "./styles";
+import food from "./assets/food.jpeg";
+// import NewBlogForm from './components/newBlogForm'
+import Header from './components/header';
+import Button from './components/dumbComponents/button';
 
 function App(): any {
   const dispatch = useDispatch()
+  const classes = useStyles();
   
   useEffect(() => {
     dispatch(getFavorites())
@@ -21,14 +26,34 @@ function App(): any {
       return blogs
   }
 
-  console.log("invoke favs", Blogs())
-
-
-
   return (
-    <div className="App">
-        <NewBlogForm />
-    </div>
+    <Switch>
+      <Route
+          path="/"
+          render={() => {
+            <div >
+              <Container >
+                <Header />
+                <Grow in>
+                  <Container>
+                    <Typography className={classes.whatsUp} variant="h6" align="center">
+                      Welcome! What are you interested in today?
+                    </Typography>
+                    <Grid container justify="space-between" alignItems="stretch"
+                      spacing={3}>  
+                      <Button type={"Technical Blogs"} src={food} />  
+                      <Button type={"Projects"} src={food} />  
+                      <Button type={"Recipes"} src={food} />  
+                      <Button type={"Music"} src={food} />  
+                    </Grid>
+                  </Container>
+                </Grow>
+              </Container>
+      </div>
+          }
+        />
+      
+    </Switch>
   );
 }
 
