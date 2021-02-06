@@ -9,6 +9,8 @@ import food from "./assets/food.jpeg";
 // import NewBlogForm from './components/newBlogForm'
 import Header from './components/header';
 import Button from './components/dumbComponents/button';
+import DropDownMenu from './components/dumbComponents/DropDownMenu'
+import { isJsxElement } from 'typescript';
 
 function App(): any {
   const dispatch = useDispatch()
@@ -28,10 +30,39 @@ function App(): any {
 
   return (
     <Switch>
+      <Route 
+          path="/recipes"
+          render={() => {
+            return (
+              <div>
+                <Container >
+                  <Header />
+                  <Grow in>
+                    <Container>
+                      <Typography className={classes.whatsUp} variant="h6" align="center">
+                        Recipes
+                      </Typography>
+                      <Grid container justify="space-between" alignItems="stretch"
+                        spacing={3}>  
+                        <DropDownMenu/>
+                      {/* <Button type={"Technical Blogs"} src={food} />  
+                      <Button type={"Projects"} src={food} />  
+                      <Button type={"Recipes"} src={food} />  
+                      <Button type={"Music"} src={food} />   */}
+                      </Grid>
+                    </Container>
+                  </Grow>
+                </Container>
+              </div>
+            )
+          }}
+        >
+        </Route>
       <Route
           path="/"
           render={() => {
-            <div >
+           return (
+            <div>
               <Container >
                 <Header />
                 <Grow in>
@@ -49,10 +80,11 @@ function App(): any {
                   </Container>
                 </Grow>
               </Container>
-      </div>
+            </div>
+           )
           }
+        }
         />
-      
     </Switch>
   );
 }
