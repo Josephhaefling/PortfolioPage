@@ -15,7 +15,7 @@ const DropDownMenu = () => {
             <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
                 Open Menu
             </Button>
-            <Menu
+            {/* <Menu
                 id="simple-menu"
                 // anchorEl={anchorEl}
                 keepMounted
@@ -25,7 +25,7 @@ const DropDownMenu = () => {
                 <MenuItem>Profile</MenuItem>
                 <MenuItem>My account</MenuItem>
                 <MenuItem>Logout</MenuItem>
-            </Menu>
+            </Menu> */}
         </section>
     )
 }

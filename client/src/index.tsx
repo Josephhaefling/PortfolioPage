@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
@@ -11,6 +11,7 @@ import reducers from './reducers';
 import App from './App';
 
 const store = createStore(reducers, composeWithDevTools(applyMiddleware(thunk)))
+
 ReactDOM.render(
   <Provider store={ store }>
     <BrowserRouter>

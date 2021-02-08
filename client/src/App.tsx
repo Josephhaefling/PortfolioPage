@@ -1,5 +1,5 @@
-import React, { FC, useEffect } from 'react';
-import { Switch, Route, withRouter, Link } from 'react-router-dom'
+import React, {useEffect, FunctionComponent } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getFavorites } from './actions/favorites'
 import { getBlogs } from './actions/blogs';
@@ -7,12 +7,13 @@ import { Container, Typography, Grow, Grid } from "@material-ui/core";
 import useStyles from "./styles";
 import food from "./assets/food.jpeg";
 // import NewBlogForm from './components/newBlogForm'
+import ReactPlayer from 'react-player';
 import Header from './components/header';
 import Button from './components/dumbComponents/button';
 import DropDownMenu from './components/dumbComponents/DropDownMenu'
 import { isJsxElement } from 'typescript';
 
-function App(): any {
+function App(): JSX.Element {
   const dispatch = useDispatch()
   const classes = useStyles();
   
@@ -22,9 +23,7 @@ function App(): any {
   }, [dispatch])
 
   const Blogs = () => {
-    const blogs = useSelector((state: any) => {
-        return state.blogs
-      })
+    const blogs = useSelector((state: any) => state.blogs)
       return blogs
   }
 
@@ -32,11 +31,11 @@ function App(): any {
     <Switch>
       <Route 
           path="/recipes"
-          render={() => {
+          render={(): any => {
             return (
-              <div>
                 <Container >
                   <Header />
+                  <ReactPlayer class="thing" url='https://soundcloud.com/trevorjmatthews6/sets/shot-clock-ella-mai-1' />
                   <Grow in>
                     <Container>
                       <Typography className={classes.whatsUp} variant="h6" align="center">
@@ -44,25 +43,22 @@ function App(): any {
                       </Typography>
                       <Grid container justify="space-between" alignItems="stretch"
                         spacing={3}>  
-                        <DropDownMenu/>
-                      {/* <Button type={"Technical Blogs"} src={food} />  
-                      <Button type={"Projects"} src={food} />  
-                      <Button type={"Recipes"} src={food} />  
-                      <Button type={"Music"} src={food} />   */}
+                        {/* <DropDownMenu/> */}
+                          {/* <Button type={"Technical Blogs"} src={food} />
+                          <Button type={"Projects"} src={food} />  
+                          <Button type={"Recipes"} src={food} />  
+                          <Button type={"Music"} src={food} /> */}
                       </Grid>
                     </Container>
                   </Grow>
                 </Container>
-              </div>
             )
           }}
-        >
-        </Route>
+      />
       <Route
           path="/"
-          render={() => {
+          render={(): any =>  {
            return (
-            <div>
               <Container >
                 <Header />
                 <Grow in>
@@ -80,7 +76,6 @@ function App(): any {
                   </Container>
                 </Grow>
               </Container>
-            </div>
            )
           }
         }
