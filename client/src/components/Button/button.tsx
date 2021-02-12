@@ -1,6 +1,8 @@
 import React from 'react';
-import { Link, Button } from "@material-ui/core";
+import { Button } from "@material-ui/core";
+import { Link } from 'react-router-dom';
 import useStyles from '../styles/styles.js';
+
 
 const NewButton = (props: any) => {
     
@@ -8,22 +10,16 @@ const NewButton = (props: any) => {
     const { type } = props
 
     return (
-        props.src ? (
         <Link 
             className={styles.link} 
-            // variant="contained"
-            // size="large"
-            // type="submit"
-            // fullwidth
+            to={`/${ type }`}
+            aria-label='recipes page'
+            style={{textDecoration: "none"}}
         >
             <img src={props.src} alt={`${ type }-button`}></img>
             { type }
         </Link>
-    ): (
-    <Button >
-            { type }
-    </Button>
-    ))
+    )
 }
 
 export default NewButton

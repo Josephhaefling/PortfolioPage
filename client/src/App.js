@@ -29,11 +29,8 @@ var favorites_1 = require("./actions/favorites");
 var blogs_1 = require("./actions/blogs");
 var core_1 = require("@material-ui/core");
 var styles_1 = __importDefault(require("./styles"));
-var food_jpeg_1 = __importDefault(require("./assets/food.jpeg"));
-// import NewBlogForm from './components/newBlogForm'
-var react_player_1 = __importDefault(require("react-player"));
 var header_1 = __importDefault(require("./components/header"));
-var button_1 = __importDefault(require("./components/dumbComponents/button"));
+var MainPage_1 = __importDefault(require("./components/Views/MainView/MainPage"));
 function App() {
     var dispatch = react_redux_1.useDispatch();
     var classes = styles_1["default"]();
@@ -49,7 +46,6 @@ function App() {
         react_1["default"].createElement(react_router_dom_1.Route, { path: "/recipes", render: function () {
                 return (react_1["default"].createElement(core_1.Container, null,
                     react_1["default"].createElement(header_1["default"], null),
-                    react_1["default"].createElement(react_player_1["default"], { "class": "thing", url: 'https://soundcloud.com/trevorjmatthews6/sets/shot-clock-ella-mai-1' }),
                     react_1["default"].createElement(core_1.Grow, { "in": true },
                         react_1["default"].createElement(core_1.Container, null,
                             react_1["default"].createElement(core_1.Typography, { className: classes.whatsUp, variant: "h6", align: "center" }, "Recipes"),
@@ -58,14 +54,7 @@ function App() {
         react_1["default"].createElement(react_router_dom_1.Route, { path: "/", render: function () {
                 return (react_1["default"].createElement(core_1.Container, null,
                     react_1["default"].createElement(header_1["default"], null),
-                    react_1["default"].createElement(core_1.Grow, { "in": true },
-                        react_1["default"].createElement(core_1.Container, null,
-                            react_1["default"].createElement(core_1.Typography, { className: classes.whatsUp, variant: "h6", align: "center" }, "Welcome! What are you interested in today?"),
-                            react_1["default"].createElement(core_1.Grid, { container: true, justify: "space-between", alignItems: "stretch", spacing: 3 },
-                                react_1["default"].createElement(button_1["default"], { type: "Technical Blogs", src: food_jpeg_1["default"] }),
-                                react_1["default"].createElement(button_1["default"], { type: "Projects", src: food_jpeg_1["default"] }),
-                                react_1["default"].createElement(button_1["default"], { type: "Recipes", src: food_jpeg_1["default"] }),
-                                react_1["default"].createElement(button_1["default"], { type: "Music", src: food_jpeg_1["default"] }))))));
+                    react_1["default"].createElement(MainPage_1["default"], null)));
             } })));
 }
 exports["default"] = App;

@@ -23,5 +23,5 @@
   },
   "include": [
     "src"
-  ]
+, "src/components/Views/MainView/MainPage.tsx", "src/components/Views/MainView/MainPage.js"  ]
 }

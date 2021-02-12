@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { createBlog } from '../actions/blogs';
-import Input from './dumbComponents/input';
+import Input from './input';
 
 const NewBlogForm = (): any => {
 

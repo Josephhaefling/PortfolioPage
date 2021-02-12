@@ -1,17 +1,22 @@
 import React, {useEffect, FunctionComponent } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { Container, Typography, Grow, Grid } from "@material-ui/core";
+import { isJsxElement } from 'typescript';
+
+import useStyles from "./styles";
+
 import { getFavorites } from './actions/favorites'
 import { getBlogs } from './actions/blogs';
-import { Container, Typography, Grow, Grid } from "@material-ui/core";
-import useStyles from "./styles";
 import food from "./assets/food.jpeg";
+
 // import NewBlogForm from './components/newBlogForm'
 import ReactPlayer from 'react-player';
 import Header from './components/header';
-import Button from './components/dumbComponents/button';
-import DropDownMenu from './components/dumbComponents/DropDownMenu'
-import { isJsxElement } from 'typescript';
+import Button from './components/Button/button';
+import MainPage from './components/Views/MainView/MainPage';
+import DropDownMenu from './components/DropDown/DropDownMenu'
+import RecipePage from './components/Views/RecipesView/RecipesPage';
 
 function App(): JSX.Element {
   const dispatch = useDispatch()
@@ -35,22 +40,13 @@ function App(): JSX.Element {
             return (
                 <Container >
                   <Header />
-                  <ReactPlayer class="thing" url='https://soundcloud.com/trevorjmatthews6/sets/shot-clock-ella-mai-1' />
-                  <Grow in>
-                    <Container>
-                      <Typography className={classes.whatsUp} variant="h6" align="center">
-                        Recipes
-                      </Typography>
-                      <Grid container justify="space-between" alignItems="stretch"
-                        spacing={3}>  
-                        {/* <DropDownMenu/> */}
-                          {/* <Button type={"Technical Blogs"} src={food} />
-                          <Button type={"Projects"} src={food} />  
-                          <Button type={"Recipes"} src={food} />  
-                          <Button type={"Music"} src={food} /> */}
-                      </Grid>
-                    </Container>
-                  </Grow>
+                  {/* <ReactPlayer 
+                    class="thing" 
+                    url='https://soundcloud.com/trevorjmatthews6/sets/shot-clock-ella-mai-1'
+                    controls={true}
+                    playing={false}
+                  /> */}
+                  <RecipePage />
                 </Container>
             )
           }}
@@ -61,20 +57,7 @@ function App(): JSX.Element {
            return (
               <Container >
                 <Header />
-                <Grow in>
-                  <Container>
-                    <Typography className={classes.whatsUp} variant="h6" align="center">
-                      Welcome! What are you interested in today?
-                    </Typography>
-                    <Grid container justify="space-between" alignItems="stretch"
-                      spacing={3}>  
-                      <Button type={"Technical Blogs"} src={food} />  
-                      <Button type={"Projects"} src={food} />  
-                      <Button type={"Recipes"} src={food} />  
-                      <Button type={"Music"} src={food} />  
-                    </Grid>
-                  </Container>
-                </Grow>
+                <MainPage />
               </Container>
            )
           }
