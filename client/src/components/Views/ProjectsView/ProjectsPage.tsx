@@ -5,9 +5,10 @@ import useStyles from "../../styles/styles";
 
 
 
-const MusicPage = () => {
+const ProjectsPage = () => {
 
-    const classes = useStyles();
+      const classes = useStyles();
+
 
     return (
         <Grow in>
@@ -24,4 +25,4 @@ const MusicPage = () => {
     )
 }
 
-export default MusicPage
+export default ProjectsPage

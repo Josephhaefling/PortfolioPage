@@ -5,15 +5,15 @@ import useStyles from "../../styles/styles";
 
 
 
-const RecipePage = () => {
+const BlogsPage = () => {
 
     const classes = useStyles();
-
+    
     return (
         <Grow in>
             <Container>
                 {/* <Typography className={classes.whatsUp} variant="h6" align="center">
-                    Recipes
+                    Blogs
                 </Typography> */}
                 <Grid container justify="space-between" alignItems="stretch"
                     spacing={3}>  
@@ -24,4 +24,4 @@ const RecipePage = () => {
     )
 }
 
-export default RecipePage
+export default BlogsPage

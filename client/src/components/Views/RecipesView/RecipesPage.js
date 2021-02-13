@@ -10,7 +10,6 @@ var RecipePage = function () {
     var classes = styles_1["default"]();
     return (react_1["default"].createElement(core_1.Grow, { "in": true },
         react_1["default"].createElement(core_1.Container, null,
-            react_1["default"].createElement(core_1.Typography, { className: classes.whatsUp, variant: "h6", align: "center" }, "Recipes"),
             react_1["default"].createElement(core_1.Grid, { container: true, justify: "space-between", alignItems: "stretch", spacing: 3 }))));
 };
 exports["default"] = RecipePage;

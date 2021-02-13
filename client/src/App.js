@@ -25,12 +25,13 @@ exports.__esModule = true;
 var react_1 = __importStar(require("react"));
 var react_router_dom_1 = require("react-router-dom");
 var react_redux_1 = require("react-redux");
-var favorites_1 = require("./actions/favorites");
-var blogs_1 = require("./actions/blogs");
 var core_1 = require("@material-ui/core");
 var styles_1 = __importDefault(require("./styles"));
+var favorites_1 = require("./actions/favorites");
+var blogs_1 = require("./actions/blogs");
 var header_1 = __importDefault(require("./components/header"));
 var MainPage_1 = __importDefault(require("./components/Views/MainView/MainPage"));
+var RecipesPage_1 = __importDefault(require("./components/Views/RecipesView/RecipesPage"));
 function App() {
     var dispatch = react_redux_1.useDispatch();
     var classes = styles_1["default"]();
@@ -46,10 +47,22 @@ function App() {
         react_1["default"].createElement(react_router_dom_1.Route, { path: "/recipes", render: function () {
                 return (react_1["default"].createElement(core_1.Container, null,
                     react_1["default"].createElement(header_1["default"], null),
-                    react_1["default"].createElement(core_1.Grow, { "in": true },
-                        react_1["default"].createElement(core_1.Container, null,
-                            react_1["default"].createElement(core_1.Typography, { className: classes.whatsUp, variant: "h6", align: "center" }, "Recipes"),
-                            react_1["default"].createElement(core_1.Grid, { container: true, justify: "space-between", alignItems: "stretch", spacing: 3 })))));
+                    react_1["default"].createElement(RecipesPage_1["default"], null)));
+            } }),
+        react_1["default"].createElement(react_router_dom_1.Route, { path: "/projects", render: function () {
+                return (react_1["default"].createElement(core_1.Container, null,
+                    react_1["default"].createElement(header_1["default"], null),
+                    react_1["default"].createElement(RecipesPage_1["default"], null)));
+            } }),
+        react_1["default"].createElement(react_router_dom_1.Route, { path: "/technical blogs", render: function () {
+                return (react_1["default"].createElement(core_1.Container, null,
+                    react_1["default"].createElement(header_1["default"], null),
+                    react_1["default"].createElement(RecipesPage_1["default"], null)));
+            } }),
+        react_1["default"].createElement(react_router_dom_1.Route, { path: "/music", render: function () {
+                return (react_1["default"].createElement(core_1.Container, null,
+                    react_1["default"].createElement(header_1["default"], null),
+                    react_1["default"].createElement(RecipesPage_1["default"], null)));
             } }),
         react_1["default"].createElement(react_router_dom_1.Route, { path: "/", render: function () {
                 return (react_1["default"].createElement(core_1.Container, null,
