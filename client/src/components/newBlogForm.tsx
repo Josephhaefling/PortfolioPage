@@ -23,7 +23,6 @@ const NewBlogForm = (): any => {
 const dispatch = useDispatch()
 
 const handleSubmit = (e : any) => {
-    console.log(blogData)
     e.preventDefault()
     dispatch(createBlog(blogData))
     clear()

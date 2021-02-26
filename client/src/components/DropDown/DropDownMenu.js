@@ -8,7 +8,6 @@ var core_1 = require("@material-ui/core");
 var DropDownMenu = function () {
     var open = false;
     var handleClick = function () {
-        console.log(open);
         open ? open = false : open = true;
     };
     return (react_1["default"].createElement("section", null,

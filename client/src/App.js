@@ -29,9 +29,13 @@ var core_1 = require("@material-ui/core");
 var styles_1 = __importDefault(require("./styles"));
 var favorites_1 = require("./actions/favorites");
 var blogs_1 = require("./actions/blogs");
+// import NewBlogForm from './components/newBlogForm'
 var header_1 = __importDefault(require("./components/header"));
 var MainPage_1 = __importDefault(require("./components/Views/MainView/MainPage"));
 var RecipesPage_1 = __importDefault(require("./components/Views/RecipesView/RecipesPage"));
+var MusicPage_1 = __importDefault(require("./components/Views/MusicView/MusicPage"));
+var BlogsPage_1 = __importDefault(require("./components/Views/BlogView/BlogsPage"));
+var SongPage_1 = __importDefault(require("./components/Views/SongView/SongPage"));
 function App() {
     var dispatch = react_redux_1.useDispatch();
     var classes = styles_1["default"]();
@@ -57,12 +61,19 @@ function App() {
         react_1["default"].createElement(react_router_dom_1.Route, { path: "/technical blogs", render: function () {
                 return (react_1["default"].createElement(core_1.Container, null,
                     react_1["default"].createElement(header_1["default"], null),
-                    react_1["default"].createElement(RecipesPage_1["default"], null)));
+                    react_1["default"].createElement(BlogsPage_1["default"], null)));
             } }),
         react_1["default"].createElement(react_router_dom_1.Route, { path: "/music", render: function () {
                 return (react_1["default"].createElement(core_1.Container, null,
                     react_1["default"].createElement(header_1["default"], null),
+                    react_1["default"].createElement(MusicPage_1["default"], null),
                     react_1["default"].createElement(RecipesPage_1["default"], null)));
+            } }),
+        react_1["default"].createElement(react_router_dom_1.Route, { exact: true, path: "/:title", render: function (routeProps) {
+                var title = routeProps.match.params.title;
+                return (react_1["default"].createElement(core_1.Container, null,
+                    react_1["default"].createElement(header_1["default"], null),
+                    react_1["default"].createElement(SongPage_1["default"], { title: title })));
             } }),
         react_1["default"].createElement(react_router_dom_1.Route, { path: "/", render: function () {
                 return (react_1["default"].createElement(core_1.Container, null,

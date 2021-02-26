@@ -6,7 +6,6 @@ const DropDownMenu = () => {
     let open = false
 
     const handleClick = () => {
-        console.log(open)
         open ? open = false : open = true
     }
 

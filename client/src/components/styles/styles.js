@@ -21,10 +21,16 @@ export default makeStyles(() => ({
     flexDirection: 'column',
     // height: '10vh',
     justifyContent: 'center',
+    // marginTop: '20%',
     // width: '10vw'
   },
   image: {
       height: '100%',
       width: '100%'
+  },
+  largeButton: {
+    objectFit: 'center',
+    height: '5vh',
+    width: '5vw'
   }
 }))

@@ -1,23 +1,22 @@
 import React from 'react';
 import { Container, Typography, Grow, Grid } from "@material-ui/core";
+import CreateSongLinks from '../../../hooks/CreateSongLinks';
+import Button from '../../Button/button';
+
 
 import useStyles from "../../styles/styles";
-
-
 
 const MusicPage = () => {
 
     const classes = useStyles();
+    const songLinks = CreateSongLinks();
 
     return (
         <Grow in>
             <Container>
-            {/* <Typography className={classes.whatsUp} variant="h6" align="center">
-                Music
-            </Typography> */}
-            <Grid container justify="space-between" alignItems="stretch"
+                <Grid container justify="space-between" alignItems="stretch"
                 spacing={3}>  
-                {/* <DropDownMenu/> */}
+                    { songLinks }
                 </Grid>
             </Container>
         </Grow>

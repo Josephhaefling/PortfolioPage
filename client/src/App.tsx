@@ -8,10 +8,9 @@ import useStyles from "./styles";
 
 import { getFavorites } from './actions/favorites'
 import { getBlogs } from './actions/blogs';
-import food from "./assets/food.jpeg";
+import food from "./assets/joesPortfolioFood.png";
 
 // import NewBlogForm from './components/newBlogForm'
-import ReactPlayer from 'react-player';
 import Header from './components/header';
 import Button from './components/Button/button';
 import MainPage from './components/Views/MainView/MainPage';
@@ -20,6 +19,7 @@ import RecipePage from './components/Views/RecipesView/RecipesPage';
 import MusicPage from './components/Views/MusicView/MusicPage';
 import BlogsPage from './components/Views/BlogView/BlogsPage';
 import ProjectsPage from './components/Views/ProjectsView/ProjectsPage';
+import SongPage from './components/Views/SongView/SongPage';
 
 function App(): JSX.Element {
   const dispatch = useDispatch()
@@ -43,12 +43,6 @@ function App(): JSX.Element {
             return (
                 <Container >
                   <Header />
-                  {/* <ReactPlayer 
-                    class="thing" 
-                    url='https://soundcloud.com/trevorjmatthews6/sets/shot-clock-ella-mai-1'
-                    controls={true}
-                    playing={false}
-                  /> */}
                   <RecipePage />
                 </Container>
             )
@@ -60,12 +54,6 @@ function App(): JSX.Element {
             return (
                 <Container >
                   <Header />
-                  {/* <ReactPlayer 
-                    class="thing" 
-                    url='https://soundcloud.com/trevorjmatthews6/sets/shot-clock-ella-mai-1'
-                    controls={true}
-                    playing={false}
-                  /> */}
                   <RecipePage />
                 </Container>
             )
@@ -77,13 +65,8 @@ function App(): JSX.Element {
             return (
                 <Container >
                   <Header />
-                  {/* <ReactPlayer 
-                    class="thing" 
-                    url='https://soundcloud.com/trevorjmatthews6/sets/shot-clock-ella-mai-1'
-                    controls={true}
-                    playing={false}
-                  /> */}
-                  <RecipePage />
+                  
+                  <BlogsPage />
                 </Container>
             )
           }}
@@ -94,13 +77,20 @@ function App(): JSX.Element {
             return (
                 <Container >
                   <Header />
-                  {/* <ReactPlayer 
-                    class="thing" 
-                    url='https://soundcloud.com/trevorjmatthews6/sets/shot-clock-ella-mai-1'
-                    controls={true}
-                    playing={false}
-                  /> */}
+                  <MusicPage />
                   <RecipePage />
+                </Container>
+            )
+          }}
+      />
+      <Route 
+          exact path="/:title"
+          render={(routeProps): any => {
+            const { title } = routeProps.match.params
+            return (
+                <Container >
+                  <Header />
+                  <SongPage title={ title } />
                 </Container>
             )
           }}

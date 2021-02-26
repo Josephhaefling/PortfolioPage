@@ -1,7 +1,6 @@
 import favoriteMessage from '../Models/postFavorite.js';
 // import blogMessage from '../Models/postBlog.js';
 
-
 export const getFavorites = async (req, res) => {
     try {
         const favMessage = await favoriteMessage.find()
@@ -10,6 +9,7 @@ export const getFavorites = async (req, res) => {
     } catch(error) {
         res.status(404).json({message: error.message})
     }
+
 }
 
 export const postFavorite = async (req, res) => {
