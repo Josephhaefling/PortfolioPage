@@ -8,13 +8,10 @@ import useStyles from "./styles";
 
 import { getFavorites } from './actions/favorites'
 import { getBlogs } from './actions/blogs';
-import food from "./assets/joesPortfolioFood.png";
 
 // import NewBlogForm from './components/newBlogForm'
 import Header from './components/header';
-import Button from './components/Button/button';
 import MainPage from './components/Views/MainView/MainPage';
-import DropDownMenu from './components/DropDown/DropDownMenu'
 import RecipePage from './components/Views/RecipesView/RecipesPage';
 import MusicPage from './components/Views/MusicView/MusicPage';
 import BlogsPage from './components/Views/BlogView/BlogsPage';

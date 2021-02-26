@@ -10,7 +10,6 @@ const SongPage = (props: any) => {
     const songTitle = props.title
     const song = FindSong(songTitle)
     const { url, title, description } = song
-    console.log(description.genres)
 
     return (
         <Grow in>
@@ -26,13 +25,18 @@ const SongPage = (props: any) => {
                         controls={true}
                         playing={false}
                 />
+                </Grid>
                   <Typography className={"thing"} variant="h6" align="center">
                     {title}
                   </Typography>
                   <Typography className={"thing"} variant="body1" align="center">
                     {description.genres}
                   </Typography>
-                </Grid>
+                  <Button 
+                    type={"Music"} 
+                    src=""
+                    url={"Music"}
+                  />
             </Container>
         </Grow>
     )

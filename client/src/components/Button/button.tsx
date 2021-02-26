@@ -7,7 +7,7 @@ import useStyles from '../styles/styles.js';
 const NewButton = (props: any) => {
 
     const styles = useStyles()
-    const { type, url } = props
+    const { type, url, src } = props
     return (
         <Link 
             className={styles.link} 
@@ -16,11 +16,12 @@ const NewButton = (props: any) => {
             aria-label={`${type} page`}
             style={{textDecoration: "none"}}
         >
-            <img 
+            {src && <img 
                 src={props.src} 
                 alt={`${ type }-button`}
             >
-            </img>
+            </img>}
+            
             { type }
         </Link>
     )
